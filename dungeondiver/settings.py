@@ -68,7 +68,6 @@ TEMPLATES = [
     },
 ]
 
-WSGI_APPLICATION = 'dungeondiver.wsgi.application'
 
 
 # Database
