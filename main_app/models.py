@@ -11,16 +11,20 @@ JOBS = (
     ('S', 'Sorcerer'),
 )
 
-# Create your models here.
+
+
 
 class Diver(models.Model):
     name = models.CharField(max_length=50, default='')
     race = models.CharField(max_length=75, default='')
-    job = models.CharField(max_length=75, default='') # HERE swithcing to a drop down? 
+    job = models.CharField(
+        max_length=10, 
+            choices=JOBS,
+            default=JOBS[0][0]
+        ) # HERE swithcing to a drop down? 
     backstory = models.TextField(max_length=250, default='')
     level = models.IntegerField(default=1)
-    #inventory
-    #image 
+     
     #user = models.ForeignKey(User, on_delete=models.CASCADE, default=None)
 
     def __str__(self):
@@ -30,3 +34,16 @@ class Diver(models.Model):
     
     def get_absolute_url(self):
         return reverse('detail', kwargs={'diver_id': self.id})
+    
+
+# Create your models here.
+class Item(models.Model):
+    name = models.CharField(max_length=50, default='')
+    description = models.TextField(default='')
+    #diver = models.ForeignKey(Diver, on_delete=models.CASCADE)
+
+    def __str__(self):
+        return self.name
+
+    def get_absolute_url(self):
+        return reverse('items_detail', kwargs={'pk': self.id})

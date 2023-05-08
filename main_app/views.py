@@ -4,7 +4,7 @@ from django.views.generic import ListView, DetailView
 from django.contrib.auth import login
 from django.contrib.auth.forms import UserCreationForm
 from django.contrib.auth.decorators import login_required
-
+from .forms import ItemForm
 from .models import Diver
 # Create your views here.
 
@@ -21,7 +21,11 @@ def divers_index(request):
 #needs require login
 def divers_detail(request, diver_id):
    diver = Diver.objects.get(id=diver_id)
-   return render(request, 'divers/detail.html', {'diver': diver})
+   item_form = ItemForm()
+   return render(request, 'divers/detail.html', {
+      'diver': diver,
+      'item_form': item_form
+      })
 
 def signup(request):
   error_message = ''
