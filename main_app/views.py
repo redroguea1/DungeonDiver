@@ -1,9 +1,11 @@
 from django.shortcuts import render, redirect
-from django.views.generic import ListView, DetailView, CreateView
-
+from django.views.generic.edit import CreateView, UpdateView, DeleteView
+from django.views.generic import ListView, DetailView
 from django.contrib.auth import login
 from django.contrib.auth.forms import UserCreationForm
 from django.contrib.auth.decorators import login_required
+
+from .models import Diver
 # Create your views here.
 
 #HOME V1
@@ -11,10 +13,15 @@ def home(request):
     return render(request, 'home.html')
 #HOME V2 - CBV
 
-
+#needs require login
 def divers_index(request):
     # HERE need to pass the divers object through to the index HERE 
-    return render(request, 'divers/index.html')
+    divers = Diver.objects.all()
+    return render(request, 'divers/index.html', { 'divers': divers } )
+#needs require login
+def divers_detail(request, diver_id):
+   diver = Diver.objects.get(id=diver_id)
+   return render(request, 'divers/detail.html', {'diver': diver})
 
 def signup(request):
   error_message = ''
@@ -34,3 +41,8 @@ def signup(request):
   form = UserCreationForm()
   context = {'form': form, 'error_message': error_message}
   return render(request, 'registration/signup.html', context)
+
+#need to require login
+class DiverCreate(CreateView):
+    model = Diver
+    fields = ['name', 'race', 'job', 'backstory', 'level']
