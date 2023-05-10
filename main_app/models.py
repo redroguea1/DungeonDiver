@@ -16,7 +16,7 @@ class Diver(models.Model):
     name = models.CharField(max_length=50, default='')
     race = models.CharField(max_length=75, default='')
     job = models.CharField(
-        max_length=10, 
+        max_length=20, 
             # choices=JOBS,
             # default=JOBS[0][0]
         ) # HERE swithcing to a drop down? 
@@ -38,10 +38,10 @@ class Diver(models.Model):
 class Item(models.Model):
     name = models.CharField(max_length=50, default='')
     description = models.TextField(default='')
-    #diver = models.ForeignKey(Diver, on_delete=models.CASCADE)
+    diver = models.ForeignKey(Diver, default=1, on_delete=models.CASCADE)
 
     def __str__(self):
-        return self.name
+        return ("name:" + self.name)
 
     def get_absolute_url(self):
         return reverse('items_detail', kwargs={'pk': self.id})

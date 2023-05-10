@@ -2,7 +2,15 @@
 
 {% block content %}
 
-<h1>search</h1>
+{% if item %}
+    <h1>ITEM ADDED!</h1>
+    <h2>{{item.name}}</h2>
+    <p>{{item.description}}</p>
+{% else %}
+    <h1>No Item Found</h1>
+{% endif %}
+
+<h1><a href="/divers/{{diver.id}}">Return to {{diver.name}}</a></h1>
 
 {% endblock %}
 
