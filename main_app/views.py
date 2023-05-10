@@ -5,7 +5,8 @@ from django.contrib.auth import login
 from django.contrib.auth.forms import UserCreationForm
 from django.contrib.auth.decorators import login_required
 from .forms import ItemForm
-from .models import Diver
+from .models import Diver, Item
+import requests
 # Create your views here.
 
 #HOME V1
@@ -20,9 +21,9 @@ def divers_index(request):
     return render(request, 'divers/index.html', { 'divers': divers } )
 #needs require login
 def divers_detail(request, diver_id):
-   diver = Diver.objects.get(id=diver_id)
-   item_form = ItemForm()
-   return render(request, 'divers/detail.html', {
+    diver = Diver.objects.get(id=diver_id)
+    item_form = ItemForm()
+    return render(request, 'divers/detail.html', {
       'diver': diver,
       'item_form': item_form
       })
@@ -50,3 +51,37 @@ def signup(request):
 class DiverCreate(CreateView):
     model = Diver
     fields = ['name', 'race', 'job', 'backstory', 'level']
+
+class ItemCreate(CreateView):
+   model = Item
+   fields = ['name', 'description']
+
+def search_items(request):
+   #need to combine my form data with the get request and sif through the results
+   userInput = request.POST['name']
+    #SEARCH
+   response = requests.get(f'https://api.open5e.com/search/?name={userInput}')
+
+   #HERE we have the parsing of the item to be added to inventory
+   print(response)
+   results = response.json()
+   item = results['results']
+   #checking we have returned at least 1 item
+   if len(item) >=1:
+    #creating an item to pass throw to render to our page.
+    charItem = Item()  
+    charItem.name = item[0]['name']
+    charItem.description = item[0]['text']
+    print("THIS IS IT!")
+    print(charItem)
+    #charItem.save()
+    #diverDANCE as well. 
+   else:
+    print("The results:")
+    print(item)
+    #HERE create a function for rendering an error when results are bad. 
+   
+   return render(request, 'divers/detail.html', {
+      #'diver_id': diver_id,
+      #'charItem': charItem
+   })

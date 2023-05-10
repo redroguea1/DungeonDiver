@@ -12,15 +12,13 @@ JOBS = (
 )
 
 
-
-
 class Diver(models.Model):
     name = models.CharField(max_length=50, default='')
     race = models.CharField(max_length=75, default='')
     job = models.CharField(
         max_length=10, 
-            choices=JOBS,
-            default=JOBS[0][0]
+            # choices=JOBS,
+            # default=JOBS[0][0]
         ) # HERE swithcing to a drop down? 
     backstory = models.TextField(max_length=250, default='')
     level = models.IntegerField(default=1)

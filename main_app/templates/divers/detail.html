@@ -19,7 +19,7 @@
 <!-- 2nd row with items search and diver.items -->
 <div class="row">
     <div class="col s6">
-        <h3>{{ diver.name }}'s Inventory</h3>
+        <h4>{{ diver.name }}'s Inventory</h4>
     {% if diver.items.count %}
       {% for item in diver.items.all %}
         <div class="card">
@@ -36,7 +36,7 @@
     </div>
     <div class="col s6">
         <h1>Search TBD</h1>
-        <form method="POST">
+        <form action="{% url 'search_items'%}" method="POST">
             {% csrf_token %}
             <!-- Render the inputs -->
             {{ item_form.as_p }}

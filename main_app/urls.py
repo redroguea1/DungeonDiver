@@ -11,5 +11,6 @@ urlpatterns = [
   path('divers/create/', views.DiverCreate.as_view(), name ='diver_create'),
     # CBV version
     #path('divers/', views.Divers.as_view(), name='index')
-  path('accounts/signup/', views.signup, name='signup')  
+  path('accounts/signup/', views.signup, name='signup'),
+  path('divers/search/', views.search_items, name='search_items')
 ]
