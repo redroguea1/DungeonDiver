@@ -1,1 +1,1 @@
-web: gunicorn redroguea1/dungeondiver.wsgi
+web: gunicorn dungeondiver.wsgi
