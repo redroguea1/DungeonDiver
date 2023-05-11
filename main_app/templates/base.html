@@ -17,14 +17,14 @@
           <li><a href="/" class="left brand-logo">&nbsp;&nbsp;Dungeon Diver </a></li>
         </ul>
         <ul class="right">
-            {% if user.is_authenticated %}
+            <!-- {% if user.is_authenticated %} -->
             <li><a href="{% url 'diver_create' %}">Create Diver</a></li>
             <li><a href="{% url 'index' %}">Divers</a></li>
             <li><a href="{% url 'logout' %}">Logout</a></li>
-            {% else %}
+            <!-- {% else %} -->
             <li><a href="{% url 'signup' %}">Sign Up</a></li>
             <li><a href="{% url 'login' %}">Login</a></li>
-            {% endif %}
+            <!-- {% endif %} -->
         </ul>
       </div>
     </nav>
