@@ -22,8 +22,7 @@ class Diver(models.Model):
         ) # HERE swithcing to a drop down? 
     backstory = models.TextField(max_length=250, default='')
     level = models.IntegerField(default=1)
-     
-    #user = models.ForeignKey(User, on_delete=models.CASCADE, default=None)
+    user = models.ForeignKey(User, on_delete=models.CASCADE, default=None)
 
     def __str__(self):
         charString = (self.name + ", JOB:" + self.job) 
@@ -33,7 +32,6 @@ class Diver(models.Model):
     def get_absolute_url(self):
         return reverse('detail', kwargs={'diver_id': self.id})
     
-
 # Create your models here.
 class Item(models.Model):
     name = models.CharField(max_length=50, default='')

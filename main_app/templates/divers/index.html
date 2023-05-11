@@ -3,17 +3,21 @@
 
 <h1>Divers</h1>
 
-{% for diver in divers %}
-  <a href="{% url 'detail' diver.id%}">
-    <div class="card">
-      <div class="card-content">
-        <span class="card-title">{{ diver.name }}</span>
-        <p>RACE: {{ diver.race }} || JOB: {{ diver.job }}</p>
-        <p>Backstory: {{ diver.backstory |linebreaks }}</p>
-        <p>Level: {{ diver.level }}</p>
-      </div>
-    </div>
-  </a>
-{% endfor %}
+{% if divers %}
+    {% for diver in divers %}
+        <a href="{% url 'detail' diver.id%}">
+            <div class="card">
+                <div class="card-content">
+                    <span class="card-title">{{ diver.name }}</span>
+                    <p>RACE: {{ diver.race }} || JOB: {{ diver.job }}</p>
+                    <p>Backstory: {{ diver.backstory |linebreaks }}</p>
+                    <p>Level: {{ diver.level }}</p>
+                </div>
+            </div>
+        </a>
+    {% endfor %}
+{% else %}
+    <h3>No Divers Found...</h3>
+{% endif %}
 
 {% endblock %}

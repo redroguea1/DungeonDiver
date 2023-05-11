@@ -17,7 +17,7 @@ def home(request):
 #needs require login
 def divers_index(request):
     # HERE need to pass the divers object through to the index HERE 
-    divers = Diver.objects.all()
+    divers = Diver.objects.filter(user=request.user)
     return render(request, 'divers/index.html', { 'divers': divers } )
 #needs require login
 def divers_detail(request, diver_id):
@@ -51,6 +51,10 @@ def signup(request):
 class DiverCreate(CreateView):
     model = Diver
     fields = ['name', 'race', 'job', 'backstory', 'level']
+    
+    def form_valid(self, form):
+       form.instance.user = self.request.user
+       return super().form_valid(form)
 
 class ItemCreate(CreateView):
    model = Item
@@ -71,12 +75,9 @@ def search_items(request, diver_id):
     charItem = Item()  
     charItem.name = item[0]['name']
     charItem.description = item[0]['text']
-    print("Item RETRIEVED >>>") #HERE REMOVE
-    print(charItem)
     charItem.diver_id = diver_id
     charItem.save()
    else:
-    print("Failure:") #HERE REMOVE
     return render(request, 'divers/search.html', {
       'diver': diver,
       'diver_id': diver_id,
