@@ -1,17 +1,22 @@
 {% extends 'base.html' %}
 {% load materializecss %}
-{% load static %}
+
 {% block content %}
 
-<div class="">
-<h1>{{ diver.name }}</h1><h4> Level: {{ diver.level }}</h4>
+
+
+
+
+<div style="display: flex; justify-content: center;">
+<h1>{{ diver.name }} </h1>
 </div>
 <!-- first row -->
 <div class="row">
     <div class="card">
         <div class="card-content">
             <span class="card-title"></span>
-            <p>RACE: {{ diver.race }} || JOB: {{ diver.job }}</p>
+            <h5>RACE: {{ diver.race }} || JOB: {{ diver.job }}</h5>
+            <p>  LV: {{ diver.level }}</p>
             <hr />
             <p>Backstory:</p>
             <p>{{ diver.backstory |linebreaks }}</p>
@@ -31,7 +36,7 @@
               <th>Description</th>
             </tr>
           </thead>
-          <tbody class="collection overflow-y">
+          <tbody class="collection" style="overflow-y:auto">
             {% for item in diver.item_set.all %}
             <tr>
               <td>{{item.name}}</td>

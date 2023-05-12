@@ -1,0 +1,27 @@
+/* added CSS styling to be applied to Deeper Elements */
+
+.card {
+    background-color: beige;
+    border: unset;
+    border-style: solid;
+}
+
+/* function for making my Character descriptions shimmer */
+p.blink {
+    animation: blink 1s infinite linear;
+}
+
+@keyframes blink {
+    50% {
+        opacity: 0;
+    }
+}
+
+table.striped tr:nth-child(odd) {
+    background-color: beige;
+}
+
+table.striped tr:nth-child(even) {
+    background-color: light beige;
+}
+

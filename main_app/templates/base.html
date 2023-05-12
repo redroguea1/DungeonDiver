@@ -1,4 +1,7 @@
 {% load static %}
+
+<link rel="stylesheet" href="{% static 'main_app/style.css' %}">
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -11,20 +14,25 @@
   <link rel="stylesheet" type="text/css" href="{% static 'css/style.css' %}">
   
 </head>
-<body id="bg" style="background-image: url('{% static 'img/elbarnzo.jpeg'%}')">
+<body id="bg" style="background-image: url('{% static 'img/elbarnzo.JPG'%}')">
   <header class="navbar-fixed">
     <nav class="green darken-1">
       <div class="nav-wrapper">
         <a href="/" class="brand-logo center">Dungeon Diver</a>
         <ul class="right">
-            <!-- {% if user.is_authenticated %} -->
+            {% if user.is_authenticated %}
             <li><a href="{% url 'diver_create' %}">Create Diver</a></li>
             <li><a href="{% url 'index' %}">Divers</a></li>
-            <li><a href="{% url 'logout' %}">Logout</a></li>
-            <!-- {% else %} -->
+            {% else %}
             <li><a href="{% url 'signup' %}">Sign Up</a></li>
+            {% endif %}
+        </ul>
+        <ul class="left">
+            {% if user.is_authenticated %}
+            <li class="left"><a href="{% url 'logout' %}">Logout</a></li>
+            {% else %}
             <li><a href="{% url 'login' %}">Login</a></li>
-            <!-- {% endif %} -->
+            {% endif %}
         </ul>
       </div>
     </nav>
