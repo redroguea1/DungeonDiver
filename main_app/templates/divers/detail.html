@@ -1,5 +1,8 @@
 {% extends 'base.html' %}
+{% load materializecss %}
+
 {% block content %}
+
 
 <h1>{{ diver.name }}</h1><h4> Level: {{ diver.level }}</h4>
 
@@ -42,13 +45,7 @@
         {% endif %}
     </div>
     <div class="col s6">
-        <h1>Search TBD</h1>
-        {% if charItem %}
-          <p>Woot Found:</p>
-          {{ charItem.as_p }}
-        {% else %}
-          {{ error.as_p }}
-        {% endif %}
+        <h1>Mystery Item... </h1>
         <form action="{% url 'search_items' diver.id %}"  method="POST">
             {% csrf_token %}
             <!-- Render the inputs -->

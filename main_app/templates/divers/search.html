@@ -1,16 +1,16 @@
 {% extends 'base.html' %}
 
 {% block content %}
-
+<div>
 {% if item %}
-    <h1>ITEM ADDED!</h1>
-    <h2>{{item.name}}</h2>
+    <h1 class="text content center card-panel blue">ITEM ADDED!</h1>
+    <h3 class="blink">{{item.name}}</h3>
     <p>{{item.description}}</p>
 {% else %}
-    <h1>No Item Found</h1>
+    <h1 class="text content center card-panel purple darken-1">No Item Found</h1>
 {% endif %}
-
-<h1><a href="/divers/{{diver.id}}">Return to {{diver.name}}</a></h1>
+</div>
+<h4 class="'text content center"><a href="/divers/{{diver.id}}">Return to {{diver.name}}</a></h4>
 
 {% endblock %}
 
