@@ -9,8 +9,40 @@ body {
     flex: 1 0 auto;
   }
   
-  footer.page-footer {
+  .page-footer {
     padding-top: 0;
     text-align: right;
+    background-color: #43a047;
+  }
+
+/* added CSS styling to be applied to Deeper Elements */
+
+  .card {
+    background-color: beige;
+    border: unset;
+    border-style: solid;
+  }
+
+  /* function for making my Character descriptions shimmer */
+  p.blink {
+    animation: blink 1s infinite linear;
+  }
+  
+  @keyframes blink {
+    50% {
+      opacity: 0;
+    }
+  }
+
+  table.striped tr:nth-child(odd) {
+    background-color: blue;
+  }
+  
+  table.striped tr:nth-child(even) {
+    background-color: light blue;
+  }
+
+  #bg{
+    background-repeat: no-repeat;
   }
   
