@@ -5,7 +5,7 @@
 
 ### 
 
-<a href="https://git.io/typing-svg"><img src="https://readme-typing-svg.demolab.com?font=Press+Start+2P&pause=1000&color=AEBFD0&center=true&vCenter=true&width=435&lines=-+SMiTHx+-" alt="Typing SVG" /></a>
+<a href="https://git.io/typing-svg"><img src="https://readme-typing-svg.demolab.com?font=Castoro+Titling&size=30&duration=4000&pause=10000&color=F7DB6F&background=837209&center=true&vCenter=true&width=427&height=75&lines=Dungeon+Diver" alt="Typing SVG" /></a>
 
 ### Built by: [McKinley D.](http://linkedin.com/in/mckinleyo)
 
