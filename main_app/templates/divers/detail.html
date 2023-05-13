@@ -3,10 +3,6 @@
 
 {% block content %}
 
-
-
-
-
 <div style="display: flex; justify-content: center;">
 <h1>{{ diver.name }} </h1>
 </div>
@@ -18,8 +14,7 @@
             <h5>RACE: {{ diver.race }} || JOB: {{ diver.job }}</h5>
             <p>  LV: {{ diver.level }}</p>
             <hr />
-            <p>Backstory:</p>
-            <p>{{ diver.backstory |linebreaks }}</p>
+            <p class="my-class">{{ diver.backstory |linebreaks }}</p>
         </div>
    </div>
 </div>
@@ -36,11 +31,11 @@
               <th>Description</th>
             </tr>
           </thead>
-          <tbody class="collection" style="overflow-y:auto">
+          <tbody class="collection">
             {% for item in diver.item_set.all %}
             <tr>
               <td>{{item.name}}</td>
-              <td>{{item.description}}</td>
+              <td class="my-class">{{item.description}}</td>
             </tr>
             {% endfor %}
           </tbody>
@@ -50,7 +45,7 @@
         {% endif %}
     </div>
     <div class="col s6">
-        <h1>Mystery Item... </h1>
+        <h1 class="justify-content:center">Mystery Box </h1>
         <form action="{% url 'search_items' diver.id %}"  method="POST">
             {% csrf_token %}
             <!-- Render the inputs -->

@@ -1,20 +1,37 @@
 /* added CSS styling to be applied to Deeper Elements */
-
-.card {
+p {
+    font-family: 'MedievalSharp';
+}
+div.card {
     background-color: beige;
     border: unset;
-    border-style: solid;
+    border-style: ridge;
+}
+/* converting my table into a scroll */
+tbody.collection {
+    overflow-y: auto;
 }
 
-/* function for making my Character descriptions shimmer */
-p.blink {
-    animation: blink 1s infinite linear;
+h1 {
+    font-style: italic;
+    font-family: 'Cinzel', cursive;
 }
 
-@keyframes blink {
-    50% {
-        opacity: 0;
-    }
+table {
+    height: 100%;
+}
+
+.my-class{
+    font-family: 'Tangerine';
+}
+
+td.my-class {
+    font-family: 'MedievalSharp';
+    #font-size: xx-large;
+}
+
+div.nav-wrapper {
+    font-family: 'Courgette', cursive;
 }
 
 table.striped tr:nth-child(odd) {
@@ -22,6 +39,8 @@ table.striped tr:nth-child(odd) {
 }
 
 table.striped tr:nth-child(even) {
-    background-color: light beige;
+    background-color: lightsteelblue;
 }
+
+
 
