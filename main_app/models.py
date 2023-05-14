@@ -17,16 +17,13 @@ class Diver(models.Model):
     race = models.CharField(max_length=75, default='')
     job = models.CharField(
         max_length=20, 
-            # choices=JOBS,
-            # default=JOBS[0][0]
-        ) # HERE swithcing to a drop down? 
+        )
     backstory = models.TextField(max_length=250, default='')
     level = models.IntegerField(default=1)
     user = models.ForeignKey(User, on_delete=models.CASCADE, default=None)
 
     def __str__(self):
         charString = (self.name + ", JOB:" + self.job) 
-        # HERE check if this works how you want it or nah
         return charString 
     
     def get_absolute_url(self):

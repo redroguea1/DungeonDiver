@@ -12,14 +12,14 @@ import requests
 #HOME V1
 def home(request):
     return render(request, 'home.html')
-#HOME V2 - CBV
 
-#needs require login
+@login_required
 def divers_index(request):
     # HERE need to pass the divers object through to the index HERE 
     divers = Diver.objects.filter(user=request.user)
     return render(request, 'divers/index.html', { 'divers': divers } )
-#needs require login
+
+@login_required
 def divers_detail(request, diver_id):
     diver = Diver.objects.get(id=diver_id)
     item_form = ItemForm()
@@ -28,8 +28,7 @@ def divers_detail(request, diver_id):
       'item_form': item_form
       })
 
-
-#need to require login
+@login_required
 class DiverCreate(CreateView):
     model = Diver
     fields = ['name', 'race', 'job', 'backstory', 'level']
@@ -38,10 +37,12 @@ class DiverCreate(CreateView):
        form.instance.user = self.request.user
        return super().form_valid(form)
 
+@login_required
 class ItemCreate(CreateView):
    model = Item
    fields = ['name', 'description']
 
+@login_required
 def search_items(request, diver_id):
    #retrieving input and diver. 
    userInput = request.POST['name']
