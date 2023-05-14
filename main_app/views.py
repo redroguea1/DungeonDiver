@@ -1,9 +1,9 @@
 from django.shortcuts import render, redirect
 from django.views.generic.edit import CreateView, UpdateView, DeleteView
-from django.views.generic import DetailView
 from django.contrib.auth import login
 from django.contrib.auth.forms import UserCreationForm
 from django.contrib.auth.decorators import login_required
+from django.contrib.auth.mixins import LoginRequiredMixin
 from .forms import ItemForm
 from .models import Diver, Item
 import requests
@@ -29,7 +29,7 @@ def divers_detail(request, diver_id):
       })
 
 
-class DiverCreate(CreateView):
+class DiverCreate(LoginRequiredMixin, CreateView):
     model = Diver
     fields = ['name', 'race', 'job', 'backstory', 'level']
     
@@ -37,11 +37,11 @@ class DiverCreate(CreateView):
        form.instance.user = self.request.user
        return super().form_valid(form)
     
-class DiverUpdate(UpdateView):
+class DiverUpdate(LoginRequiredMixin, UpdateView):
    model = Diver
    fields = ['job', 'backstory', 'level']
 
-class DiverDelete(DeleteView):
+class DiverDelete(LoginRequiredMixin, DeleteView):
    model = Diver
    success_url = '/divers'
 #End of CRUD

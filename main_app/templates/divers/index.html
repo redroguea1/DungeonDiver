@@ -13,6 +13,7 @@
                     <p class="my-class">{{ diver.backstory | safe | linebreaks }}</p>
                     <p class="card-title-primary">LV: {{ diver.level }} // RACE: {{ diver.race }} \\ JOB: {{ diver.job }}</p>
                 </div>
+                <a href="{% url 'diver_delete' diver.id %}">Delete</a>
             </div>
         
     {% endfor %}
