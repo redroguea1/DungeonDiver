@@ -8,7 +8,3 @@ class ItemForm(ModelForm):
         model = Item
         fields = ['name']
 
-# #     name_input = forms.CharField(max_length=100)
-
-# class ItemForm(forms.Form):
-#     name = forms.charField

@@ -11,8 +11,8 @@
     <div class="card">
         <div class="card-content">
             <span class="card-title"></span>
-            <h5>RACE: {{ diver.race }} || JOB: {{ diver.job }}</h5>
-            <p>  LV: {{ diver.level }}</p>
+            <h5>{{ diver.race }} || JOB: {{ diver.job }}</h5>
+            <p>LV: {{ diver.level }}</p>
             <hr />
             <p class="my-class">{{ diver.backstory |linebreaks }}</p>
         </div>
@@ -45,7 +45,8 @@
         {% endif %}
     </div>
     <div class="col s6">
-        <h1 class="justify-content:center">Mystery Box </h1>
+        <h1 style="justify-content:center">Mystery Box </h1>
+        <p>search the mystery box to bolster your diver...</p>
         <form action="{% url 'search_items' diver.id %}"  method="POST">
             {% csrf_token %}
             <!-- Render the inputs -->
