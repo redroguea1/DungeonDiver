@@ -28,7 +28,6 @@ def divers_detail(request, diver_id):
       'item_form': item_form
       })
 
-
 class DiverCreate(LoginRequiredMixin, CreateView):
     model = Diver
     fields = ['name', 'race', 'job', 'backstory', 'level']
