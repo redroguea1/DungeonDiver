@@ -17,6 +17,10 @@
             <p class="my-class">{{ diver.backstory |linebreaks }}</p>
         </div>
    </div>
+   <div class="card-action">
+    <a href="{% url 'diver_update' diver.id %}">Edit</a>
+    <a href="{% url 'diver_delete' diver.id %}">Delete</a>
+  </div>
 </div>
 
 <!-- 2nd row with items search and diver.items -->

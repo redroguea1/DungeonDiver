@@ -1,6 +1,6 @@
 from django.shortcuts import render, redirect
 from django.views.generic.edit import CreateView, UpdateView, DeleteView
-from django.views.generic import ListView, DetailView
+from django.views.generic import DetailView
 from django.contrib.auth import login
 from django.contrib.auth.forms import UserCreationForm
 from django.contrib.auth.decorators import login_required
@@ -9,7 +9,6 @@ from .models import Diver, Item
 import requests
 # Create your views here.
 
-#HOME V1
 def home(request):
     return render(request, 'home.html')
 
@@ -19,6 +18,7 @@ def divers_index(request):
     divers = Diver.objects.filter(user=request.user)
     return render(request, 'divers/index.html', { 'divers': divers } )
 
+#CRUD functions start here. 
 @login_required
 def divers_detail(request, diver_id):
     diver = Diver.objects.get(id=diver_id)
@@ -28,7 +28,7 @@ def divers_detail(request, diver_id):
       'item_form': item_form
       })
 
-@login_required
+
 class DiverCreate(CreateView):
     model = Diver
     fields = ['name', 'race', 'job', 'backstory', 'level']
@@ -36,6 +36,15 @@ class DiverCreate(CreateView):
     def form_valid(self, form):
        form.instance.user = self.request.user
        return super().form_valid(form)
+    
+class DiverUpdate(UpdateView):
+   model = Diver
+   fields = ['job', 'backstory', 'level']
+
+class DiverDelete(DeleteView):
+   model = Diver
+   success_url = '/divers'
+#End of CRUD
 
 @login_required
 class ItemCreate(CreateView):
