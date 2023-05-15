@@ -1,6 +1,15 @@
 {% extends 'base.html' %}
 {% block content %}
 
-<h1>HOME</h1>
+<div>
+<h1>Build Some Character</h1>
+<p>Welcome to Dungeon Diver</p>
+<h2><a href="{% url 'index' %}"">Divers</a></h2>
+<p>Your collections of Divers, go Explore!</p>
+<h2><a href="{% url 'diver_create' %}">Create</a></h2>
+<p>Make a new diver!</p>
+<h3>Mystery Box</h3>
+<p>Search the entire D&D database to give your Diver some edge!</p>
+</div>
 
 {% endblock %}

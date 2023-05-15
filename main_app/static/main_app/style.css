@@ -12,6 +12,11 @@ tbody.collection {
     overflow-y: auto;
 }
 
+div {
+    text-align: center;
+    margin: 0 auto;
+}
+
 
 p.description {
     background-color: beige;
@@ -19,10 +24,11 @@ p.description {
     border-style: ridge;
 }
 
-h1, h4 {
+h1, h2, h3, h4 {
     font-style: italic;
     font-weight: bold;
     font-family: 'Cinzel', cursive;
+    font-weight: bolder;
 }
 
 span.card-title {
@@ -37,8 +43,6 @@ label {
     font-size: 1.5rem !important;
     color: black !important;
     font-family: 'Courgette';
-    /* background-color: #43a047; */
-    background-image: url(/main_app/static/img/chest.svg); 
 }
 
 form {
