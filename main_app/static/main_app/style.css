@@ -1,4 +1,16 @@
 /* added CSS styling to be applied to Deeper Elements */
+main {
+    min-width: 300px;
+    max-width: 100%;
+    margin: 0 auto;
+    display: flex;
+    flex-wrap: wrap;
+}
+
+main > * {
+    flex: 1;
+}
+
 p {
     font-family: 'MedievalSharp';
 }
@@ -17,7 +29,6 @@ div {
     margin: 0 auto;
 }
 
-
 p.description {
     background-color: beige;
     border: unset;
@@ -26,9 +37,11 @@ p.description {
 
 h1, h2, h3, h4 {
     font-style: italic;
+    font-size: 8vh;
     font-weight: bold;
     font-family: 'Cinzel', cursive;
     font-weight: bolder;
+    
 }
 
 span.card-title {
