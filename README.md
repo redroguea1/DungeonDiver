@@ -38,7 +38,9 @@ ERD: https://lucid.app/lucidchart/4ad101fc-62bf-4b80-bb2e-f309fb69e6a6/edit?beac
 
 ## 📷 Initial Concept:
 
+![Screenshot 2023-05-15 at 8 53 12 AM](https://github.com/redroguea1/DungeonDiver/assets/125352596/fa67f6fd-af4f-4e46-9cfa-7b75fa73e0c0)
 
+![IMG_7700](https://github.com/redroguea1/DungeonDiver/assets/125352596/72449561-05da-4349-954d-40ec22c641f6)
 
 ## :camera_flash: Visuals and Helpful Insight:
 
