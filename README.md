@@ -1,6 +1,6 @@
 # DungeonDiver
 
-#Description: Dungeon Diver, come build some character! Is a RPG game character designer and database. Perfect for keeping track of your digital characters across different games. Version 1 focuses on the fantasy game Dungeons and Dragons. 
+Dungeon Diver, come build some character! Is a RPG game character designer and database. Perfect for keeping track of your digital characters across different games. Version 1 focuses on the fantasy game Dungeons and Dragons. 
 
 
 ### 
