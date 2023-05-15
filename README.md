@@ -43,9 +43,15 @@ ERD: https://lucid.app/lucidchart/4ad101fc-62bf-4b80-bb2e-f309fb69e6a6/edit?beac
 ## :camera_flash: Visuals and Helpful Insight:
 
 ### Landing Page
+<img width="1335" alt="Screenshot 2023-05-14 at 10 02 21 PM" src="https://github.com/redroguea1/DungeonDiver/assets/125352596/9907ccde-9f17-4577-8059-af4e02c9d7ff">
 
 
 ### Main Pages
+<img width="1492" alt="Screenshot 2023-05-14 at 10 04 23 PM" src="https://github.com/redroguea1/DungeonDiver/assets/125352596/fce179d4-047e-4ae8-846b-ed08fa789e5b">
+
+<img width="1542" alt="Screenshot 2023-05-14 at 10 02 48 PM" src="https://github.com/redroguea1/DungeonDiver/assets/125352596/0f3ddd7f-8c11-4c47-b218-490e5621ed1c">
+
+<img width="1472" alt="Screenshot 2023-05-14 at 10 07 37 PM" src="https://github.com/redroguea1/DungeonDiver/assets/125352596/cb08e070-a242-4e53-a9f4-899d52e4ac59">
 
 
 
